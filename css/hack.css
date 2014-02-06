@@ -1,3 +1,30 @@
 @charset "utf-8";
 
+.line:after {content:" x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x"; visibility:hidden; clear:both; height:0 !important; display:block; line-height:0; font-size:xx-large; overflow:hidden;}
+.line {*zoom:1;}
+.unit {float:left;}
+.unitRt {float:right;}
 
+body, div, h3, p, input {
+	margin:0;
+	border:0;
+	padding:0;
+}
+
+.dBlock {display:block;}
+
+.m5 {margin:5px;}
+.mr5 {margin-right:5px;}
+.mb10 {margin-bottom:10px;}
+
+.bdrBox {
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+.bdrGray {border:1px solid #666;}
+
+.p5 {padding:5px;}
+.p10 {padding:10px;}
+
+.size1of2 {width:50%;}
