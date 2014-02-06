@@ -29,6 +29,7 @@ http://www.doppelme.com/avatar.png?xx=
 
 /* declare array values */
 $colors = ['ff0000', '00ff00', '0000ff', '000000', 'ffffff', 'ffa500', 'ffff00', '800080', '808080', '000080', 'fae7do', 'dfc183', 'aa724b', '7b4b2a', 'feb186', 'b58a3f', 'ff0033'];
+$totalColors = count($colors)-1;
 
 $genders = array('1101', '1102');
 $expressions = array('67', '69');
@@ -42,46 +43,84 @@ $glasses = array('126', '123');
 $backgrounds = array('319', '316', '317', '320', '0');
 
 $png = 'http://www.doppelme.com/avatar.png?xx=';
-$gender = '&style=' . $genders[0];
-$expression = '&fa=' . $expressions[0];
-$beard = '&ff=' . $beards[0];
-$hat = '&ha=' . $hats[0];
-$hair = '&h=' . $hairs[0];
-$shirt = '&t=' . $shirts[0];
-$pant = '&b=' . $pants[0];
-$shoe = '&f=' . $shoes[0];
-$glass = '&e=' . $glasses[0];
-$bg = '&back=' . $backgrounds[0];
+$gender = $genders[rand(0, count($genders)-1)];
+$expression = $expressions[rand(0, count($expressions)-1)];
+$beard = $beards[rand(0, count($beards)-1)];
+$hat = $hats[rand(0, count($hats)-1)];
+$hair = $hairs[rand(0, count($hairs)-1)];
+$shirt = $shirts[rand(0, count($shirts)-1)];
+$pant = $pants[rand(0, count($pants)-1)];
+$shoe = $shoes[rand(0, count($shoes)-1)];
+$glass = $glasses[rand(0, count($glasses)-1)];
+$bg = $backgrounds[rand(0, count($backgrounds)-1)];
 
 $totalColors = count($colors)-1;
+$beardColor = $colors[rand(0, $totalColors)];
+$hatColor = $colors[rand(0, $totalColors)];
+$hairColor = $colors[rand(0, $totalColors)];
+$shirtColor = $colors[rand(0, $totalColors)];
+$pantColor = $colors[rand(0, $totalColors)];
+$shoeColor = $colors[rand(0, $totalColors)];
 
-$beardColor = '&ffc=' . $colors[rand(0, $totalColors)];
-$hatColor = '&hac=' . $colors[rand(0, $totalColors)];
-$hairColor = '&hc=' . $colors[rand(0, $totalColors)];
-$shirtColor = '&tc=' . $colors[rand(0, $totalColors)];
-$pantColor = '&bc=' . $colors[rand(0, $totalColors)];
-$shoeColor = '&fc=' . $colors[rand(0, $totalColors)];
-
-$img = $png . $gender . $expression . $beard . $hat . $hair . $shirt . $pant . $shoe . $glass . $bg . $beardColor . $hatColor . $hairColor . $shirtColor . $pantColor . $shoeColor;
+$img = $png . '&style=' . $gender . '&fa=' . $expression . '&ff=' . $beard . '&ha=' . $hat . '&h=' . $hair . '&t=' . $shirt . '&b=' . $pant . '&f=' . $shoe . '&e=' . $glass . '&back=' . $bg . '&ffc=' . $beardColor . '&hac=' . $hatColor . '&hc=' . $hairColor . '&tc=' . $shirtColor . '&bc=' . $pantColor . '&fc=' . $shoeColor;
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Untitled Document</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<link type="text/css" href="css/hack.css" rel="stylesheet"/>
 	</head>
 	<body>
 		<form>
-			<select id="drpShirtColor">
+			<select id="drpShirtStyle" class="dBlock mb10 p5">
+				<option value="null">Choose a shirt</option>
 				<?php foreach($shirts as $key=>$shirt){ ?>
-					<option value="<?= $shirt; ?>"><?= $shirt; ?></option>
+					<option value="<?= $shirt; ?>">Shirt <?= $key+1; ?></option>
+				<?php } ?>
+			</select>
+			<select id="drpPantsStyle" class="dBlock mb10 p5">
+				<option value="null">Choose pants</option>
+				<?php foreach($pants as $key=>$pant){ ?>
+					<option value="<?= $pant; ?>">Pants <?= $key+1; ?></option>
 				<?php } ?>
 			</select>
 		</form>
-		<img src="<?= $img; ?>" alt="avatar"/>
+		<img src="<?= $img; ?>" id="avatar" alt="avatar"/>
 		<script>
+			png = 'http://www.doppelme.com/avatar.png?xx=';
+			gender = '<?= $gender; ?>';
+			expression = '<?= $expression; ?>';
+			beard = '<?= $beard; ?>';
+			hat = '<?= $hat; ?>';
+			hair = '<?= $hair; ?>';
+			shirt = '<?= $shirt; ?>';
+			pant = '<?= $pant; ?>';
+			shoe = '<?= $shoe; ?>';
+			glass = '<?= $glass; ?>';
+			bg = '<?= $bg; ?>';
+			beardColor = '<?= $beardColor; ?>';
+			hatColor = '<?= $hatColor; ?>';
+			hairColor = '<?= $hairColor; ?>';
+			shirtColor = '<?= $shirtColor; ?>';
+			pantColor = '<?= $pantColor; ?>';
+			shoeColor = '<?= $shoeColor; ?>';
 			
+			$('#drpShirtStyle').on('change', function(){
+				shirt = $('#drpShirtStyle>option:selected').val()
+				buildAvatar();
+			});
+			$('#drpPantsStyle').on('change', function(){
+				pant = $('#drpPantsStyle>option:selected').val()
+				buildAvatar();
+			});
+			
+			function buildAvatar(){
+				img = png + '&style=' + gender + '&fa=' + expression + '&ff=' + beard + '&ha=' + hat + '&h=' + hair + '&t=' + shirt + '&b=' + pant + '&f=' + shoe + '&e=' + glass + '&back=' + bg + '&ffc=' + beardColor + '&hac=' + hatColor + '&hc=' + hairColor + '&tc=' + shirtColor + '&bc=' + pantColor + '&fc=' + shoeColor;
+				$('#avatar').attr('src', img);
+			}
 		</script>
 	</body>
 </html>
