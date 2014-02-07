@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=360, scale=1, user-scalable=0"/>
 	</head>
 	<body class="m5">
-		<form id="avatarForm" action="set-avatar.php" method="GET">
+		<form id="avatarForm" action="#" method="GET">
 			<input type="hidden" name="uname" value="<?= $_GET['uname']; ?>"/>
 			<div class="line mb10">
 				<div class="unit bdrBox pr5 size1of2">
@@ -97,7 +97,23 @@
 			</div>
 			<input type="submit" value="Submit" class="mb10 bdrBox bdrGray p5 wFull csrPointer"/>
 		</form>
-		<img src="" id="avatar" alt="avatar" class="dBlock balance mb10"/>
+		<img src="" id="avatar" class="dBlock balance mb10"/>
 		<div id="debug" class="p5 bdrGray hide"></div>
+		<script>
+			$('#avatarForm').submit(function(e){
+				url = 'set-avatar.php?';
+				e.preventDefault();
+				$.each($(this).serializeArray(), function(key, value){
+					if(key > 0){
+						url += '&';
+					}
+					url += this.name + '=' + this.value;
+				});
+				$.ajax(url).done(function(e){
+					//window.location = '';
+				});
+				console.log(url);
+			});
+		</script>
 	</body>
 </html>
