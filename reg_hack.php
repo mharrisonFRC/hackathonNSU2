@@ -1,4 +1,11 @@
-<?php
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Hackathon NSU Team 2 - Avatars</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<link type="text/css" href="css/hack.css" rel="stylesheet"/>
+	</head>
+	<body class="m5">
+<?php	
 //When the submit button is pressed on html page
 if(isset($_GET['fname'])){
   //Declares variables store strings 
@@ -8,6 +15,7 @@ if(isset($_GET['fname'])){
   $fname = $_GET['fname'];
   $lname = $_GET['lname'];
   $email = $_GET['email'];
+  $points= $_GET['points'];
 }
 ?>
 
@@ -21,43 +29,37 @@ if(isset($_GET['fname'])){
 	<p>fname: <?= $fname; ?></p>
 	<p>lname: <?= $lname; ?></p>
 	<p>email: <?= $email; ?></p>
+	<p class="mb10">lname: <?= $points; ?></p>
 <?php } else { ?>
 	<p>you are not registered.</p>
 <?php } ?>
 
-
-
-
-
-
-
-
 <?php
-/* */
- //Stores server information into variables
-    $server = 'localhost';
-    $db_username = 'root';
-    $db_password = 'root';
-    $database = 'hacku';
+//Stores server information into variables
+$server = 'localhost';
+$db_username = 'root';
+$db_password = 'root';
+$database = 'hacku';
 
-   ///Php conects to mysql database 
-    $connection=mysql_connect($server, $db_username, $db_password)
-        or die('Could not connect to the mySQL databse');
+///Php conects to mysql database 
+$connection=mysql_connect($server, $db_username, $db_password) or die('Could not connect to the mySQL databse');
          
-    mysql_select_db($database, $connection)
-       or die('could not connect to the database');
-       
-       $sql = "SELECT * FROM user"; 
-       mysql_select_db("hacku", $con);
-       $myData = mysql_query($sql, $con);
-       echo 'myData: ' . mysql_num_rows($myData);
+mysql_select_db($database, $connection) or die('could not connect to the database');
+$sql = "SELECT * FROM user"; 
+mysql_select_db("hacku", $connection);
+$myData = mysql_query($sql, $connection);
+?>
+<?php while($record = mysql_fetch_array ($myData)){ ?>
+	<div class="mb10">
+		<p> User Name: <?= $record['uname']; ?></p>
+		<p> Password: <?= $record['pword']; ?></p>
+		<p> First Name: <?= $record['fname']; ?></p>
+		<p>Last Name: <?= $record['lname']; ?></p>
+		<p>Email: <?= $record['email']; ?></p>
+		<p>Points: <?= $record['points']; ?></p>
+	</div>
+<?php } ?>
 
-       while($record = mysql_fetch_array ($myData)){
-       		echo $record['fname'];
-       }
-       mysql_close($con)
-       
-   
-
- 
+<?php 
+       mysql_close($connection);
     ?>
