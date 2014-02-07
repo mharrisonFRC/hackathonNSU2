@@ -87,8 +87,57 @@ $img = $png . '&style=' . $gender . '&fa=' . $expression . '&ff=' . $beard . '&h
 					<option value="<?= $pant; ?>">Pants <?= $key+1; ?></option>
 				<?php } ?>
 			</select>
+			<select id="drpShoesStyle" class="dBlock mb10 p5">
+				<option value="null">Choose shoes</option>
+				<?php foreach($shoes as $key=>$shoe){ ?>
+					<option value="<?= $shoe; ?>">Shoes <?= $key+1; ?></option>
+				<?php } ?>
+			</select>
+			<select id="drpGlassesStyle" class="dBlock mb10 p5">
+				<option value="null">Choose glasses</option>
+				<?php foreach($glasses as $key=>$glass){ ?>
+					<option value="<?= $glass; ?>">Glasses <?= $key+1; ?></option>
+				<?php } ?>
+			</select>
+			<select id="drpGendersStyle" class="dBlock mb10 p5">
+				<option value="null">Choose genders</option>
+				<?php foreach($genders as $key=>$gender){ ?>
+					<option value="<?= $gender; ?>">Genders <?= $key+1; ?></option>
+				<?php } ?>
+			</select>
+			<select id="drpExpressionsStyle" class="dBlock mb10 p5">
+				<option value="null">Choose expression</option>
+				<?php foreach($expressions as $key=>$expression){ ?>
+					<option value="<?= $expression; ?>">Expressions <?= $key+1; ?></option>
+				<?php } ?>
+			</select>
+			<select id="drpBeardsStyle" class="dBlock mb10 p5">
+				<option value="null">Choose beard</option>
+				<?php foreach($beards as $key=>$beard){ ?>
+					<option value="<?= $beard; ?>">Beards <?= $key+1; ?></option>
+				<?php } ?>
+			</select>
+			<select id="drpHatsStyle" class="dBlock mb10 p5">
+				<option value="null">Choose hat</option>
+				<?php foreach($hats as $key=>$hat){ ?>
+					<option value="<?= $hat; ?>">Hats <?= $key+1; ?></option>
+				<?php } ?>
+			</select>
+			<select id="drpHairsStyle" class="dBlock mb10 p5">
+				<option value="null">Choose hair</option>
+				<?php foreach($hairs as $key=>$hair){ ?>
+					<option value="<?= $hair; ?>">Hairs <?= $key+1; ?></option>
+				<?php } ?>
+			</select>
+			<select id="drpBackgroundStyle" class="dBlock mb10 p5">
+				<option value="null">Choose background</option>
+				<?php foreach($backgrounds as $key=>$bg){ ?>
+					<option value="<?= $bg; ?>">Backgrounds <?= $key+1; ?></option>
+				<?php } ?>
+			</select>
 		</form>
 		<img src="<?= $img; ?>" id="avatar" alt="avatar"/>
+		<div id="debug" class="p5 bdrGray"></div>
 		<script>
 			png = 'http://www.doppelme.com/avatar.png?xx=';
 			gender = '<?= $gender; ?>';
@@ -116,10 +165,42 @@ $img = $png . '&style=' . $gender . '&fa=' . $expression . '&ff=' . $beard . '&h
 				pant = $('#drpPantsStyle>option:selected').val()
 				buildAvatar();
 			});
-			
+			$('#drpShoesStyle').on('change', function(){
+				pant = $('#drpShoesStyle>option:selected').val()
+				buildAvatar();
+			});
+			$('#drpGlassesStyle').on('change', function(){
+				glass = $('#drpGlassesStyle>option:selected').val()
+				buildAvatar();
+			});
+			$('#drpGendersStyle').on('change', function(){
+				gender = $('#drpGendersStyle>option:selected').val()
+				buildAvatar();
+			});
+			$('#drpExpressionsStyle').on('change', function(){
+				expression = $('#drpExpressionsStyle>option:selected').val()
+				buildAvatar();
+			});
+			$('#drpBeardsStyle').on('change', function(){
+				beard = $('#drpBeardsStyle>option:selected').val()
+				buildAvatar();
+			});
+			$('#drpHatsStyle').on('change', function(){
+				hat = $('#drpHatsStyle>option:selected').val()
+				buildAvatar();
+			});
+			$('#drpHairsStyle').on('change', function(){
+				hair = $('#drpHairsStyle>option:selected').val()
+				buildAvatar();
+			});
+			$('#drpBackgroundStyle').on('change', function(){
+				bg = $('#drpBackgroundsStyle>option:selected').val()
+				buildAvatar();
+			});
 			function buildAvatar(){
 				img = png + '&style=' + gender + '&fa=' + expression + '&ff=' + beard + '&ha=' + hat + '&h=' + hair + '&t=' + shirt + '&b=' + pant + '&f=' + shoe + '&e=' + glass + '&back=' + bg + '&ffc=' + beardColor + '&hac=' + hatColor + '&hc=' + hairColor + '&tc=' + shirtColor + '&bc=' + pantColor + '&fc=' + shoeColor;
 				$('#avatar').attr('src', img);
+				$('#debug').append(img + '<br/>');
 			}
 		</script>
 	</body>
