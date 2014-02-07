@@ -6,7 +6,11 @@
 	</head>
 	<body class="m5">
 <?php	
-//When the submit button is pressed on html page
+	/*
+	Prints all eight users from the database
+	and the following attributes below
+	*/
+//If the first name is set get all of the following variables
 if(isset($_GET['fname'])){
   //Declares variables store strings 
   $uname = $_GET['uname'];
@@ -18,10 +22,6 @@ if(isset($_GET['fname'])){
   $points= $_GET['points'];
 }
 ?>
-
-
-
-
 <?php if(isset($fname)){ ?>
 	<p>uname: <?= $uname; ?></p>
 	<p>pword: <?= $pword; ?></p>
@@ -33,17 +33,15 @@ if(isset($_GET['fname'])){
 <?php } else { ?>
 	<p>you are not registered.</p>
 <?php } ?>
-
 <?php
 //Stores server information into variables
 $server = 'localhost';
 $db_username = 'root';
 $db_password = 'root';
 $database = 'hacku';
-
-///Php conects to mysql database 
+//Php conects to mysql database 
 $connection=mysql_connect($server, $db_username, $db_password) or die('Could not connect to the mySQL databse');
-         
+
 mysql_select_db($database, $connection) or die('could not connect to the database');
 $sql = "SELECT * FROM user"; 
 mysql_select_db("hacku", $connection);
@@ -59,7 +57,6 @@ $myData = mysql_query($sql, $connection);
 		<p>Points: <?= $record['points']; ?></p>
 	</div>
 <?php } ?>
-
 <?php 
        mysql_close($connection);
     ?>
