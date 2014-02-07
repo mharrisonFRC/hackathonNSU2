@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/avatar.js"></script>
 		<link type="text/css" href="css/hack.css" rel="stylesheet"/>
+		<meta name="viewport" content="width=320"/>
 	</head>
 	<body class="m5">
 		<form id="avatarForm" action="avatar-update.php" method="POST">
