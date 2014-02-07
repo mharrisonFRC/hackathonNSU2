@@ -7,6 +7,7 @@ colors.push(['Brown', '754c24']);
 colors.push(['Red', 'ff0000']);
 colors.push(['Green', '00ff00']);
 colors.push(['Blue', '0000ff']);
+colors.push(['Navy Blue', '000080']);
 colors.push(['Purple', '662d91']);
 colors.push(['Orange', 'f7941d']);
 colors.push(['Yellow', 'ffff00']);
@@ -14,7 +15,7 @@ colors.push(['Yellow', 'ffff00']);
 totalColors = colors.length-1;
 
 genders = [['Male', '1101'], ['Female', '1102']];
-expressions = [['Happy', '67'], ['Sad', '69'], ['Wink','1'], ['Angry','3'], ['Silly', '240'], ['Jasmine','202'], ['Evil grin','243'], ['Bored','418'], ['Sleepy','5'], ['Crying','416'], ['Zombie', '330']];
+expressions = [['Happy', '67'], ['Sad', '69'], ['Wink','1'], ['Angry','3'], ['Silly', '240'], ['Evil grin','243'], ['Bored','418'], ['Sleepy','5'], ['Crying','416'], ['Zombie', '330']];
 hairs = [['Ponytail', '12'], ['Chinese bang', '476'], ['Low cut','473'], ['Flat top', '15'], ['Balding', '17'],['Princess Leia','262'], ['Medium length', '18'],['Japanese bun','14'], ['Long hair','19'],['Mohawk','75'],['Curly hair','76'], ['Spiky har','83'],['Afro','150'],['Dreads','154']];
 beards = [['Mustache', '7'], ['Goatee', '8'], ['Beard', '11'], ['Moustache and Goatee','9'], [' Half beard', '10'], [' Full beard', '11']];
 glasses = [['Round', '123'], ['Square', '126']];
