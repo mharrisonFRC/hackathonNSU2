@@ -6,8 +6,9 @@ if(isset($uname) & $uname != ''){
 	$db_username = 'root';
 	$db_password = 'root';
 	$database = 'hacku';
+	
 	//Php conects to mysql database 
-	$connection=mysql_connect($server, $db_username, $db_password) or die('Could not connect to the mySQL databse');
+	$connection = mysql_connect($server, $db_username, $db_password) or die('Could not connect to the mySQL databse');
 	
 	mysql_select_db($database, $connection) or die('could not connect to the database');
 	$userSQL = "SELECT user_id FROM user WHERE uname='$uname'";
@@ -15,8 +16,8 @@ if(isset($uname) & $uname != ''){
 	while($user = mysql_fetch_array($users)){
 		$user_id = $user['user_id'];
 	}
-	$sql = "SELECT * FROM attributes WHERE user_id='$user_id'"
-		or die('DB did not connect');
+	
+	$sql = "SELECT * FROM attributes WHERE user_id='$user_id'" or die('DB did not connect');
 	mysql_select_db("hacku", $connection);
 	$myData = mysql_query($sql, $connection);
 	while($record = mysql_fetch_array ($myData)){ 
@@ -38,7 +39,6 @@ if(isset($uname) & $uname != ''){
 		$skinColor = $record['skinColor'];
 		$img = $png . '&style=' . $gender . '&s=' . $skinColor . '&fa=' . $expression . '&ff=' . $beard . '&ha=' . $hat . '&h=' . $hair . '&t=' . $shirt . '&b=' . $pant . '&f=' . $shoe . '&e=' . $glass . '&ffc=' . $beardColor . '&hac=' . $hatColor . '&hc=' . $hairColor . '&tc=' . $shirtColor . '&bc=' . $pantColor . '&fc=' . $shoeColor;
 		echo $img;
-		
 	}
 }
 ?>
