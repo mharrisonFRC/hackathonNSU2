@@ -38,7 +38,6 @@ if(isset($uname) & $uname != ''){
 		$shoeColor = $record['shoeColor'];
 		$skinColor = $record['skinColor'];
 		$img = $png . '&style=' . $gender . '&s=' . $skinColor . '&fa=' . $expression . '&ff=' . $beard . '&ha=' . $hat . '&h=' . $hair . '&t=' . $shirt . '&b=' . $pant . '&f=' . $shoe . '&e=' . $glass . '&ffc=' . $beardColor . '&hac=' . $hatColor . '&hc=' . $hairColor . '&tc=' . $shirtColor . '&bc=' . $pantColor . '&fc=' . $shoeColor;
-		echo $img;
 	}
 }
 ?>
