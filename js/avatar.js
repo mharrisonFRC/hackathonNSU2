@@ -27,7 +27,6 @@ hats = [['Ballcap', '20'], ['Beanie', '22'], ['Top hat', '25'],['Cowboy hat','30
 
 //declare default values
 png = 'http://www.doppelme.com/avatar.png?xx=';
-if(window.skinColor != 'null'){
 	gender = genders[Math.floor(Math.random()*genders.length)][1];
 	expression = expressions[1][1];//Default to sad until money is earned
 	beard = null;
@@ -45,30 +44,6 @@ if(window.skinColor != 'null'){
 	pantColor = colors[0][1];
 	shoeColor = colors[0][1];
 	hatColor = colors[0][1];
-} else {
-
-	gender = window.gender;
-	expression = window.expression;
-	beard = window.beard;
-	glass = window.glass;
-	hair = window.hair;
-	shirt = window.shirt;
-	pant = window.pant;
-	shoe = window.shoe;
-	hat = window.hat;
-	
-	
-	
-	
-	
-	skinColor = window.skinColor;
-	hairColor = window.hairColor;
-	beardColor = window.beardColor;
-	shirtColor = window.shirtColor;
-	pantColor = window.pantColor;
-	shoeColor = window.shoeColor;
-	hatColor = window.hatColor;
-}
 
 $(function(){
 	buildAvatar();
