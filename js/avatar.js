@@ -26,7 +26,7 @@ hats = [['Ballcap', '20'], ['Beanie', '22'], ['Top hat', '25'],['Cowboy hat','30
 
 //declare default values
 png = 'http://www.doppelme.com/avatar.png?xx=';
-if(skinColor){
+if(skinColor != 'null'){
 	gender = genders[Math.floor(Math.random()*genders.length)][1];
 	expression = expressions[1][1];//Default to sad until money is earned
 	beard = null;
