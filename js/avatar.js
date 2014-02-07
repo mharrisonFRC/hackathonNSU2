@@ -1,6 +1,7 @@
 colors = [];
 colors.push(['White', 'ffffff']);
-colors.push(['Black', '000000']);
+colors.push(['Black', '111111']);
+colors.push(['Gray', '808080']);
 colors.push(['Peach', 'f5dabc']);
 colors.push(['Brown', '754c24']);
 colors.push(['Red', 'ff0000']);
@@ -13,14 +14,15 @@ colors.push(['Yellow', 'ffff00']);
 totalColors = colors.length-1;
 
 genders = [['Male', '1101'], ['Female', '1102']];
-expressions = [['Happy', '67'], ['Sad', '69']];
-hairs = [['Ponytail', '12'], ['Spikey', '15'], ['Balding', '17'], ['Medium length', '18']];
-beards = [['Mustache', '7'], ['Goatee', '8'], ['Beard', '11']];
+expressions = [['Happy', '67'], ['Sad', '69'], ['Wink','1'], ['Angry','3'], ['Silly', '240'], ['Jasmine','202'], ['Evil grin','243'], ['Bored','418'], ['Sleepy','5'], ['Crying','416'], ['Zombie', '330']];
+hairs = [['Ponytail', '12'], ['Chinese bang', '476'], ['Low cut','473'], ['Flat top', '15'], ['Balding', '17'],['Princess Leia','262'], ['Medium length', '18'],['Japanese bun','14'], ['Long hair','19'],['Mohawk','75'],['Curly hair','76'], ['Spiky har','83'],['Afro','150'],['Dreads','154']];
+beards = [['Mustache', '7'], ['Goatee', '8'], ['Beard', '11'], ['Moustache and Goatee','9'], [' Half beard', '10'], [' Full beard', '11']];
 glasses = [['Round', '123'], ['Square', '126']];
-shirts = [['Tuxedo', '38'], ['Sweater', '41'], ['Logo', '47'], ['Baseball', '45']];
-pants = [['Pants', '95'], ['Gym shorts', '96'], ['Hearts', '101'], ['Tight', '111'], ['Skirt', '117']];
-shoes = [['Boots', '119'], ['High heels', '121'], ['Sandals', '122'], ['Sneakers', '190']];
-hats = [['Ballcap', '20'], ['Beanie', '22'], ['Top hat', '25']];
+shirts = [['T-shirt','189'], ['Sweater', '41'], ['Logo', '47'], ['Baseball', '45'], ['Tuxedo', '38'], ['Racing suit','35'], ['Leather jacket','36'], ['Nightwear','37'],['Skull t-shirt','89'],['Robe','149'], ['Knight armor', '169'], ['Wizard', '172'], ['Ballerina', '272'], ['Superwoman', '274'], ['Superman', '275'], ['Stormtrooper', '278'], ['Santa Claus', '299'], ['Darth Vader', '133'], ['Batman','385'], ['Scream ','388']];
+pants = [['Pants', '95'], ['Jeans', '107'], ['Army pants','229'],['Gym shorts', '96'], ['Hearts', '101'], ['Slacks', '111'], ['Skirt', '117'],['Mini Skirt','100'],['Kilt','110'],['British shorts','112'],['American shorts','113']];
+shoes = [['Boots', '119'], ['uggs','280'], ['High heels', '121'], ['Sandals', '122'], ['Sneakers', '190']];
+hats = [['Ballcap', '20'], ['Beanie', '22'], ['Top hat', '25'],['Cowboy hat','30'],['Crown','164'], ['Viking helmet', '167'], ['Knight helmet', '168'], ['Stormtrooper helmet', '250'], ['Santa Claus hat', '300'], ['Pharaoh crown', '463'], ['Scream mask', '387'], ['Batman mask', '386']];
+//accessories = [['Purse','286'], ['Starbucks cup', '129'],['ipod','181'], ['ipod', '181'], ['Drumset', '236'], ['Vampire fangs', '248'], ['Martini', '130'], ['Champagne', '131'], ['Soccer ball', '132'], ['Baseball', '133'], ['Playstation', '424'], ['Nintendo Wii', '425'], ['Surfboard', '136'], ['Skis', '137'], ['Snowboard', '138'], ['Football', '139'], ['Guitar', '141'], ['Skateboard', '142'], ['Dog', '143'], ['Cat', '144']];
 
 //declare default values
 png = 'http://www.doppelme.com/avatar.png?xx=';
@@ -145,5 +147,5 @@ $(function(){
 function buildAvatar(){
 	img = png + '&style=' + gender + '&s=' + skinColor + '&fa=' + expression + '&ff=' + beard + '&ha=' + hat + '&h=' + hair + '&t=' + shirt + '&b=' + pant + '&f=' + shoe + '&e=' + glass + '&ffc=' + beardColor + '&hac=' + hatColor + '&hc=' + hairColor + '&tc=' + shirtColor + '&bc=' + pantColor + '&fc=' + shoeColor;
 	$('#avatar').attr('src', img);
-	$('#debug').html('&f=' + shoe + '<br/>');
+	$('#debug').html(img + '<br/>');
 }
