@@ -8,7 +8,7 @@ if(isset($uname) & $uname != ''){
 	$database = 'hacku';
 	
 	//Php conects to mysql database 
-	$connection = mysql_connect($server, $db_username, $db_password) or die('Could not connect to the mySQL databse');
+	$connection = mysql_connect($server, $db_username, $db_password) or die('Could not connect to the mySQL database');
 	
 	mysql_select_db($database, $connection) or die('could not connect to the database');
 	$userSQL = "SELECT user_id FROM user WHERE uname='$uname'";
