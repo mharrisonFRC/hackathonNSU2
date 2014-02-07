@@ -35,6 +35,8 @@ body, div, h3, p, input, select {
 .size1of2 {width:50%;}
 .wFull {width:100%;}
 
+.csrPointer {cursor:pointer;}
+
 #debug {
 	min-height:50px;
 	/*font:10px arial;*/
