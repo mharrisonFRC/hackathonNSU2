@@ -37,7 +37,6 @@ if(isset($uname) & $uname != ''){
 		$pantColor = $record['pantColor'];
 		$shoeColor = $record['shoeColor'];
 		$skinColor = $record['skinColor'];
-		$img = $png . '&style=' . $gender . '&s=' . $skinColor . '&fa=' . $expression . '&ff=' . $beard . '&ha=' . $hat . '&h=' . $hair . '&t=' . $shirt . '&b=' . $pant . '&f=' . $shoe . '&e=' . $glass . '&ffc=' . $beardColor . '&hac=' . $hatColor . '&hc=' . $hairColor . '&tc=' . $shirtColor . '&bc=' . $pantColor . '&fc=' . $shoeColor;
 	}
 }
 ?>
@@ -49,22 +48,22 @@ if(isset($uname) & $uname != ''){
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/avatar.js"></script>
 		<script>
-			$gender = '<?= $gender; ?>';
-			$expression = '<?= $expression; ?>';
-			$beard = '<?= $beard; ?>';
-			$hat = '<?= $hat; ?>';
-			$hair = '<?= $hair; ?>';
-			$shirt = '<?= $shirt; ?>';
-			$pant = '<?= $pant; ?>';
-			$shoe = '<?= $shoe; ?>';
-			$glass = '<?= $glass; ?>';
-			$beardColor = '<?= $beardColor; ?>';
-			$hatColor = '<?= $hatColor; ?>';
-			$hairColor = '<?= $hairColor; ?>';
-			$shirtColor = '<?= $shirtColor; ?>';
-			$pantColor = '<?= $pantColor; ?>';
-			$shoeColor = '<?= $shoeColor; ?>';
-			$skinColor = '<?= $skinColor; ?>';
+			gender = '<?= $gender; ?>';
+			expression = '<?= $expression; ?>';
+			beard = '<?= $beard; ?>';
+			hat = '<?= $hat; ?>';
+			hair = '<?= $hair; ?>';
+			shirt = '<?= $shirt; ?>';
+			pant = '<?= $pant; ?>';
+			shoe = '<?= $shoe; ?>';
+			glass = '<?= $glass; ?>';
+			beardColor = '<?= $beardColor; ?>';
+			hatColor = '<?= $hatColor; ?>';
+			hairColor = '<?= $hairColor; ?>';
+			shirtColor = '<?= $shirtColor; ?>';
+			pantColor = '<?= $pantColor; ?>';
+			shoeColor = '<?= $shoeColor; ?>';
+			skinColor = '<?= $skinColor; ?>';
 		</script>
 		<link type="text/css" href="css/hack.css" rel="stylesheet"/>
 		<meta name="viewport" content="width=360, scale=1, user-scalable=0"/>
