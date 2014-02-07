@@ -170,7 +170,7 @@ if(isset($uname) & $uname != ''){
 					url += this.name + '=' + this.value;
 				});
 				$.ajax(url).done(function(e){
-					//window.location = '';
+					alert('Success!');
 				});
 				console.log(url);
 			});
