@@ -5,17 +5,20 @@
 .unit {float:left;}
 .unitRt {float:right;}
 
-body, div, h3, p, input {
+body, div, h3, p, input, select {
 	margin:0;
 	border:0;
 	padding:0;
 }
 
 .dBlock {display:block;}
+.hide {display:none;}
 
 .m5 {margin:5px;}
 .mr5 {margin-right:5px;}
 .mb10 {margin-bottom:10px;}
+.balance {margin-right:auto;margin-left:auto;}
+.w100 {width:100px;}
 
 .bdrBox {
 	box-sizing:border-box;
@@ -25,6 +28,14 @@ body, div, h3, p, input {
 .bdrGray {border:1px solid #666;}
 
 .p5 {padding:5px;}
+.pr5 {padding-right:5px;}
+
 .p10 {padding:10px;}
 
 .size1of2 {width:50%;}
+.wFull {width:100%;}
+
+#debug {
+	min-height:50px;
+	/*font:10px arial;*/
+}
